@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "524712400864",
+    "project_id": "mynotes-ishita",
+    "storage_bucket": "mynotes-ishita.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524712400864:android:ca837decc097971ff63d85",
+        "android_client_info": {
+          "package_name": "com.example.learningdart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524712400864-ut1ceeqrrkc9iuj3agrad6208p39pjop.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB58JiRufJ84nFQlYirPqZgf-mvmypa32A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524712400864-ut1ceeqrrkc9iuj3agrad6208p39pjop.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
