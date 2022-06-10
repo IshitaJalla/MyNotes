@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
               //so hence we need to do the null check
               //so if cond means that if the user exists take that value else take a value false
               if (user?.emailVerified ?? false) {
-                print('you are a verified user');
+                print('you are a verified user now');
               } else {
                 print('you need to verify your email first');
               }
