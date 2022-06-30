@@ -3,6 +3,8 @@ import 'package:learningdart/services/auth/auth_user.dart';
 
 abstract class AuthProvider {
   //protocol no logic here
+
+  Future<void> initialize();
   AuthUser? get currentUser;
   //any auth provider ggogle,fb,email, it needs to be able to optionally return the currenty authenticated user
 

@@ -1,11 +1,14 @@
 import 'package:learningdart/services/auth/auth_user.dart';
 import 'package:learningdart/services/auth/auth_provider.dart';
+import 'package:learningdart/services/auth/firebase_auth_provider.dart';
 
 class AuthService implements AuthProvider {
   //take the authprovider from us and show its functionalities to user
 
   final AuthProvider provider;
   const AuthService(this.provider);
+  //everytime we need the service we need to access the provider so instead of calling each time we create a factory const
+  factory AuthService.firebase() => AuthService(FirebaseAuthProvider());
 
   @override
   Future<AuthUser> createUser({
@@ -35,4 +38,7 @@ class AuthService implements AuthProvider {
 
   @override
   Future<void> sendEmailVerification() => provider.sendEmailVerification();
+
+  @override
+  Future<void> initialize() => provider.initialize();
 }
