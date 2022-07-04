@@ -15,13 +15,22 @@ class NotesService {
 
   //making notes service singleton
   static final NotesService _shared = NotesService._sharedInstance();
-  NotesService._sharedInstance();
+  NotesService._sharedInstance() {
+    _notesStreamController = StreamController<List<DatabaseNote>>.broadcast(
+      onListen: () {
+        _notesStreamController.sink.add(_notes);
+        //this keeps the old data as well
+      },
+    );
+  }
   factory NotesService() => _shared;
 
-  final _notesStreamController =
-      StreamController<List<DatabaseNote>>.broadcast();
+  //final _notesStreamController =
+  //   StreamController<List<DatabaseNote>>.broadcast();  we had to correct this (old data isnt kept hold of)
   //syntax StreamController datatype.broadcast(); it is responsible for making changes in the stream of data of _notes
   //everything is going to be read from streamcontroller to the outside or UI
+
+  late final StreamController<List<DatabaseNote>> _notesStreamController;
 
   Stream<List<DatabaseNote>> get allNotes => _notesStreamController.stream;
 
