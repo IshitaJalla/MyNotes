@@ -14,7 +14,7 @@ class NotesView extends StatefulWidget {
 }
 
 class _NotesViewState extends State<NotesView> {
-  String get userEmail => AuthService.firebase().currentUser!.email!;
+  String get userEmail => AuthService.firebase().currentUser!.email;
   //! is used to force unwrap which means that email has to be there even if mentioned optionl in auth user
 
   late final NotesService _notesService;

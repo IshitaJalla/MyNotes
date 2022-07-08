@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:learningdart/constants/routes.dart';
 import 'package:learningdart/services/auth/auth_exceptions.dart';
 import 'package:learningdart/services/auth/auth_service.dart';
@@ -36,6 +37,9 @@ class _LoginViewState extends State<LoginView> {
       body: Column(
         children: [
           TextField(
+            inputFormatters: [
+              FilteringTextInputFormatter.deny(RegExp('[ ]')),
+            ],
             controller: _email,
             enableSuggestions: false,
             autocorrect: false,
